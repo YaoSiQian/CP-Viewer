@@ -1,0 +1,57 @@
+{
+  "name": "cp-viewer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "cross-env NUXT_TELEMETRY_DISABLED=1 BASE_DIR=/cp/ nuxt build",
+    "start": "cross-env NUXT_TELEMETRY_DISABLED=1 BASE_DIR=/cp/ nuxt start",
+    "generate": "nuxt generate",
+    "prod": "test -d .nuxt || yarn build ; yarn start",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore . && prettier --ignore-path .gitignore --write .",
+    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
+    "lint": "yarn lint:js && yarn lint:style"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint",
+    "*.{css,vue}": "stylelint"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "5.13.6",
+    "core-js": "3.31.1",
+    "cross-env": "7.0.3",
+    "express": "4.18.2",
+    "mysql2": "3.5.1",
+    "nuxt": "2.15.8",
+    "nuxt-clipboard2": "0.2.1",
+    "sass": "1.63.6"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.6.6",
+    "@commitlint/config-conventional": "17.6.6",
+    "@nuxt/types": "2.17.0",
+    "@nuxt/typescript-build": "3.0.1",
+    "@nuxtjs/eslint-config-typescript": "12.0.0",
+    "@nuxtjs/eslint-module": "4.1.0",
+    "@nuxtjs/stylelint-module": "5.1.0",
+    "@nuxtjs/vuetify": "1.12.3",
+    "@babel/eslint-parser": "7.22.9",
+    "eslint": "8.44.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-nuxt": "4.0.0",
+    "eslint-plugin-vue": "9.15.1",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.3",
+    "postcss-html": "1.5.0",
+    "prettier": "3.0.0",
+    "stylelint": "15.10.1",
+    "stylelint-config-prettier": "9.0.5",
+    "stylelint-config-standard": "34.0.0"
+  }
+}

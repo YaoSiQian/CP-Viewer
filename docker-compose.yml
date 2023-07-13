@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - '9000:9000'
+    environment:
+      TZ: Asia/Shanghai
+      PORT: 9000
+      HATDBHOST: localhost
+      HATDBPORT: 3306
+      HATDBUSER: root
+      HATDBPASS: password
+      HATDBNAME: coreprotect
+    init: true
