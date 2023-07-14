@@ -8,9 +8,9 @@ services:
     environment:
       TZ: Asia/Shanghai
       PORT: 9000
-      HATDBHOST: localhost
-      HATDBPORT: 3306
-      HATDBUSER: root
-      HATDBPASS: password
-      HATDBNAME: coreprotect
+      DBHOST: localhost
+      DBPORT: 3306
+      DBUSER: root
+      DBPASS: password
+      DBNAME: coreprotect
     init: true
