@@ -15,7 +15,6 @@ RUN yarn install && \
 COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
 
-COPY .git/ .git/
 COPY src/ src/
 COPY nuxt.config.ts nuxt.config.ts
 COPY tsconfig.json .
